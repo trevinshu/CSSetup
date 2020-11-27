@@ -13,6 +13,17 @@ namespace WebApp.SamplePages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            BindProductList();
+        }
+
+        protected void ProductGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ProductGrid.PageIndex = e.NewPageIndex;
+            BindProductList();
+        }
+
+        protected void BindProductList()
+        {
             ProductController sysmgr = new ProductController();
             List<Product> info = sysmgr.ListAllProducts();
             ProductGrid.DataSource = info;

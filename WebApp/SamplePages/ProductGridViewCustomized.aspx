@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Customized Grid View" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductGridViewCustomized.aspx.cs" Inherits="WebApp.SamplePages.ProductGridViewCustomized" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br /><br />
-    <asp:GridView ID="ProductGrid" runat="server" AutoGenerateColumns="False">
+    <asp:GridView ID="ProductGrid" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="ProductGrid_PageIndexChanging" PageSize="5">
         <Columns>
             <asp:TemplateField HeaderText="Product ID">
                 <ItemTemplate>
@@ -41,7 +41,19 @@
 
             <asp:TemplateField HeaderText="Discontinued">
                 <ItemTemplate>
-                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("Discontinued") %>'></asp:Label>
+                    <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Eval("Discontinued") %>' Enabled="<%# false %>" />
+                </ItemTemplate>
+            </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="Crazy Price">
+                <ItemTemplate>
+                    <asp:Label ID="Label7" runat="server" Text='<%# "Wow! Crazy Price is: "+ Eval("UnitPrice") %>'></asp:Label>
+                </ItemTemplate>
+
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Formatted Unit Price">
+                <ItemTemplate>
+                    <asp:Label ID="Label8" runat="server" Text='<%# Eval("UnitPrice") + "Formatted is " + string.Format("{0:0.00}",Eval("UnitPrice")) %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 #region Additional Namespaces
 using NorthwindSystem.DAL;
 using NorthwindSystem.Entities;
+using System.ComponentModel;
 #endregion
 
 
 namespace NorthwindSystem.BLL
 {
+    [DataObject(true)]
     public class ProductController
     {
+        [DataObjectMethod(DataObjectMethodType.Select,true)]
         public List<Product> ListAllProducts()
         {
             using (var context = new NorthwindSystemContext())
