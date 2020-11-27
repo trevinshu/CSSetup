@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 #region Additional Namespaces
 using NorthwindSystem.DAL;
 using NorthwindSystem.Entities;
+using System.ComponentModel;
 #endregion
+
 
 namespace NorthwindSystem.BLL
 {
     //This class will be accessed by the webpage
     //The webpage is in a seperate project so this class needs to be public
-
+    [DataObject(true)]
     public class RegionController
     {
         //The BLL is the interface to the system and contains methods to be used from the outside user (Presentation Layer) like the webpage
@@ -35,7 +37,7 @@ namespace NorthwindSystem.BLL
                 return context.Regions.Find(regionID);
             }
         }
-
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
         public List<Region> ListAllRegions()
         {
             using (var context = new NorthwindSystemContext())

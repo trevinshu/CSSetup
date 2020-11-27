@@ -24,6 +24,24 @@ namespace WebApp.SamplePages
         protected global::System.Web.UI.WebControls.GridView ProductList;
 
         /// <summary>
+        /// RegionDDL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList RegionDDL;
+
+        /// <summary>
+        /// RegionDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource RegionDataSource;
+
+        /// <summary>
         /// ProductDataSource control.
         /// </summary>
         /// <remarks>
