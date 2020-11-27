@@ -132,6 +132,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="SamplePages\ObjectDataSourceExample.aspx" />
     <Content Include="SamplePages\ProductGridViewCustomized.aspx" />
     <Content Include="SamplePages\SimplyQuery.aspx" />
     <Content Include="SamplePages\TestPage.aspx" />
@@ -199,6 +200,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SamplePages\ObjectDataSourceExample.aspx.cs">
+      <DependentUpon>ObjectDataSourceExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\ObjectDataSourceExample.aspx.designer.cs">
+      <DependentUpon>ObjectDataSourceExample.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SamplePages\ProductGridViewCustomized.aspx.cs">
       <DependentUpon>ProductGridViewCustomized.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
